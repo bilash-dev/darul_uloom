@@ -16,25 +16,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Darul Uloom Islamia'),),
+      appBar: AppBar(title: Text('Darul Uloom Islamia'),backgroundColor: Colors.blue,),
       body: Padding(
         padding: EdgeInsets.all(15.0),
         child: GridView(
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          children: [
-            InkWell(
-              onTap: (){
-               Navigator.pushNamed(context, ProfileScreen.routeName);
-              },
-              child: const Card(
-               color: Colors.white60,
-               child: GridTile(
-                 footer: Text('Profile'),
-                 child: FlutterLogo(),
-               ),
-              ),
-            ),
+          children:[
             InkWell(
               onTap: (){
 
@@ -87,28 +75,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 child: FlutterLogo(),
               ),
             ),
-            const Card(
-              color: Colors.white60,
-              child: GridTile(
-                footer: Text('Name'),
-                child: FlutterLogo(),
-              ),
-            ),
 
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.purple,
-        onPressed: (){
-          UserPreference().removeUser();
-          Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-
-        },
-
-        child: const Text('Logout', style: TextStyle(color: Colors.white),),
-      ),
-
     );
   }
 }

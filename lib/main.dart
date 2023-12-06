@@ -3,6 +3,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/provider/auth_provider.dart';
 import 'package:untitled/provider/user_provider.dart';
+import 'package:untitled/screens/bottombar_tab.dart';
 import 'package:untitled/screens/dashboard_screen.dart';
 import 'package:untitled/screens/login_screen.dart';
 import 'package:untitled/screens/profile_screen.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        home: LoginScreen(),
+        home: const BottombarScreen(),
         routes: {
           DashboardScreen.routeName: (context) => DashboardScreen(),
           ProfileScreen.routeName: (context) => ProfileScreen(),

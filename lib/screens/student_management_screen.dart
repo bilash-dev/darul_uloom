@@ -18,7 +18,7 @@ class _StudentMgtScreenState extends State<StudentMgtScreen> {
   Widget build(BuildContext context) {
     // AuthProvider auth = Provider.of(context,listen: false);
     return Scaffold(
-      appBar: AppBar(title: Text('Student Management'),),
+      appBar: AppBar(title: Text('Student Management'),backgroundColor: Colors.blue),
       body: Column(
         children: [
           Padding(
