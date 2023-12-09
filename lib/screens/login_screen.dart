@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
     return Scaffold(
-      appBar: AppBar(title: Text('Login Screen'),
+      appBar: AppBar(title: Center(child: Text('Darul Uloom Islamia')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

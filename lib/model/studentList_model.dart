@@ -145,8 +145,7 @@ class StudentListModel {
     entryIpAddress = json['entry_ip_address'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    department:
-    List<Department>.from(json["department"].map((x) => Department.fromJson(x)));
+    department: List<Department>.from(json["department"].map((x) => Department.fromJson(x)));
   }
 }
 

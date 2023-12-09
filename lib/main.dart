@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:untitled/provider/auth_provider.dart';
 import 'package:untitled/provider/user_provider.dart';
 import 'package:untitled/screens/bottombar_tab.dart';
+import 'package:untitled/screens/courses_screen.dart';
 import 'package:untitled/screens/dashboard_screen.dart';
 import 'package:untitled/screens/login_screen.dart';
 import 'package:untitled/screens/profile_screen.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
           StudentMgtScreen.routeName: (context) => StudentMgtScreen(),
           LoginScreen.routeName: (context) => LoginScreen(),
           StudentListScreen.routeName: (context) => StudentListScreen(),
+          CoursesScreen.routeName: (context) => CoursesScreen(),
         },
       ),
     );

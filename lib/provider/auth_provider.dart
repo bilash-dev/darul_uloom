@@ -34,8 +34,6 @@ class AuthProvider with ChangeNotifier{
 
     final responseData = json.decode(response.body);
 
-    print(responseData);
-
     if(response.statusCode == 201) {
       _token = responseData['token'];
 

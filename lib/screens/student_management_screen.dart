@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/provider/auth_provider.dart';
+import 'package:untitled/screens/courses_screen.dart';
 import 'package:untitled/screens/students_list_screen.dart';
 import 'package:untitled/services/api_services.dart';
 import 'package:untitled/utility/button_widget.dart';
@@ -33,6 +34,16 @@ class _StudentMgtScreenState extends State<StudentMgtScreen> {
                 ),
               )
             ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: MyButton(
+              onTap: (){
+                Navigator.pushNamed(context, CoursesScreen.routeName);
+              },
+              buttonText: 'Courses',
+              iconData: Icons.book_outlined,
+            ),
+          )
         ],
       ),
     );
