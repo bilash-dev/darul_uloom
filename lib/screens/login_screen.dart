@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/model/user_model.dart';
@@ -54,8 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
             .catchError((info){
               if(info.toString().contains('success')){
 
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>
-                    const DashboardScreen()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>
+                    DashboardScreen()));
 
                 // User user = User();
                 // var data = Provider.of<UserProvider>(context, listen: false).setUser(user);
@@ -123,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
             SizedBox(height: 30,),
-            ElevatedButton(
+            CupertinoButton(
                 onPressed: () {
                   submit(_emailController.text, _passController.text);
                   // print(_emailController.text);
@@ -133,7 +134,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   // }
 
                 },
-                child: Text('Login')),
+                child: Text('Login', style: TextStyle(color: Colors.white),),
+              color: Colors.blue,
+            ),
           ],
           ),
         ),

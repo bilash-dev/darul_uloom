@@ -20,8 +20,8 @@ class _BottombarScreenState extends State<BottombarScreen> {
   }
 
   final tabs = [
-    DashboardScreen(),
-    ProfileScreen(),
+    const DashboardScreen(),
+    const ProfileScreen(),
   ];
 
   @override

@@ -6,6 +6,8 @@ import 'package:untitled/model/studentList_model.dart';
 import 'package:untitled/utility/api.dart';
 import 'package:untitled/utility/shared_preference.dart';
 
+import '../model/course_edit_model.dart';
+
 class ApiService{
   static var client = http.Client();
   String _token = GetStorage().read('token');
@@ -43,7 +45,6 @@ Future<List<CourseModel>?> courseList() async {
       List<CourseModel> courseModel=
       List<CourseModel>.from(responseData.map((course) => CourseModel.fromJson(course)));
 
-      print(courseModel[1].courseName);
       return courseModel;
     }else{
       print('Error: ${response.statusCode}');
@@ -51,6 +52,24 @@ Future<List<CourseModel>?> courseList() async {
   } catch (e) {
     print('Error parsing response: $e');
   }
+}
+
+//fetch course item method
+
+Future<CourseItemEdit> fetchCourseItem(id) async{
+  final url = "${Api.baseUrl}course/edit/$id";
+
+  var response = await http.get(Uri.parse(url),);
+
+  final responseData = json.decode(response.body);
+  print(responseData);
+
+  if (response.statusCode == 200) {
+    return CourseItemEdit.fromJson(responseData);
+  } else {
+    throw Exception('Failed to load responseData');
+  }
+
 }
 
 

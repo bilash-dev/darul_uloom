@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/model/course_model.dart';
+import 'package:untitled/screens/course_item_edit_screen.dart';
 import 'package:untitled/services/api_services.dart';
 
 import '../utility/shimmer_loading/loading_screen.dart';
@@ -74,21 +75,30 @@ class _CoursesScreenState extends State<CoursesScreen> {
                             DataCell(Text(course.courseName.toString())),
                             DataCell(Text(course.courseCode.toString())),
                             DataCell(
-                              PopupMenuButton<String>(
+                              PopupMenuButton(
                                 itemBuilder: (BuildContext context) {
                                   return [
-                                    PopupMenuItem<String>(
-                                      value: 'edit',
+                                    const PopupMenuItem(
+                                      value: 1,
                                       child: Text('Edit'),
                                     ),
-                                    PopupMenuItem<String>(
-                                      value: 'delete',
+                                    const PopupMenuItem(
+                                      value: 2,
                                       child: Text('Delete'),
                                     ),
                                   ];
                                 },
-                                onSelected: (String value) {
-                                  _handleMenuItem(value, index);
+                                onSelected: (value) {
+                                  var id = course.id;
+                                  switch(value){
+                                    case 1:
+                                      // _handleMenuItem(id);
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) =>CourseItemEditScreen(id!)));
+                                      break;
+
+                                  }
+
                                 },
                               ),
                             ),
@@ -102,9 +112,9 @@ class _CoursesScreenState extends State<CoursesScreen> {
           )
     );
   }
-  void _handleMenuItem(String value, int itemIndex) {
-    // Handle the selected menu item
-    print('Selected item: $value for Item $itemIndex');
-    // You can implement your own logic here, such as editing or deleting the corresponding item
+  void _handleMenuItem(id) {
+    // Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) =>CourseItemEditScreen(id)));
+
   }
 }
